@@ -35,7 +35,7 @@ func TestMakeMove(t *testing.T) {
 		if testCase.round == 0 {
 			NextRound(board)
 		} else {
-			board, err = MakeMove(c, time.Now(), database, testCase.round, "abc", testCase.userID, testCase.move)
+			board, err = MakeMove(c, time.Now(), database, testCase.round, "en-US", "abc", testCase.userID, testCase.move)
 			if err != nil {
 				t.Fatalf("Unexpected error: %v", err)
 			}

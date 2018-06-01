@@ -14,7 +14,7 @@ var (
 	ErrUnknownRound = errors.New("unknown round")
 )
 
-func MakeMove(c context.Context, now time.Time, database db.Database, round int, boardID, userID, move string) (board Board, err error) {
+func MakeMove(c context.Context, now time.Time, database db.Database, round int, lang, boardID, userID, move string) (board Board, err error) {
 	board.ID = boardID
 	if err = database.Get(c, &board); err != nil {
 		if db.IsNotFound(err) {
@@ -25,6 +25,7 @@ func MakeMove(c context.Context, now time.Time, database db.Database, round int,
 				return
 			}
 			board.BoardEntity = &BoardEntity{
+				Lang: lang,
 				Round: round,
 				Created: now,
 				UserIDs: []string{userID},

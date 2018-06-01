@@ -10,10 +10,12 @@ const BoardKind = "B"
 
 type BoardEntity struct {
 	Created   time.Time
-	Round     int                            `datastore:",noindex"`
 	UserIDs   []string
 	UserTimes []time.Time                    `datastore:",noindex"`
 	UserMoves arena.CommaSeparatedValuesList `datastore:",noindex"`
+	UserWins  []int                          `datastore:",noindex"`
+	Lang      string                         `datastore:",noindex"`
+	Round     int                            `datastore:",noindex"`
 }
 
 type Board struct {
