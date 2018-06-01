@@ -1,13 +1,15 @@
 package arena
 
 import (
-	"bytes"
-	"strings"
+		"strings"
 )
 
 type CommaSeparatedUniqueValuesList string
 
 func (csv CommaSeparatedUniqueValuesList) Add(v string) CommaSeparatedUniqueValuesList {
+	if strings.Contains(v, ",") {
+		panic("contains comma")
+	}
 	if csv == "" {
 		return CommaSeparatedUniqueValuesList(v)
 	}
@@ -28,22 +30,7 @@ func (csv CommaSeparatedUniqueValuesList) Contains(v string) bool {
 }
 
 func (csv CommaSeparatedUniqueValuesList) Remove(v string) CommaSeparatedUniqueValuesList {
-	s := string(csv)
-	if len(s) == 0 {
-		return csv
-	}
-	var buf bytes.Buffer
-	vals := strings.Split(string(csv), ",")
-	for _, val := range vals {
-		if val != v {
-			buf.WriteString(val)
-			buf.WriteString(",")
-		}
-	}
-	if buf.Len() > 0 {
-		buf.Truncate(buf.Len() - 1)
-	}
-	return CommaSeparatedUniqueValuesList(buf.Bytes())
+	return CommaSeparatedUniqueValuesList(removeValFromCSV(string(csv), v))
 }
 
 func (csv CommaSeparatedUniqueValuesList) Strings() []string {
