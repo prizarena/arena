@@ -3,7 +3,7 @@ package canvas
 import (
 	"github.com/strongo/db"
 	"time"
-	"github.com/strongo-games/arena/arena-go"
+	"github.com/prizarena/arena/arena-go"
 )
 
 const BoardKind = "B"

@@ -5,7 +5,7 @@ import (
 	"context"
 	"fmt"
 	"time"
-	"github.com/strongo-games/arena/arena-go"
+	"github.com/prizarena/arena/arena-go"
 	"errors"
 )
 
