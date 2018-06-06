@@ -4,5 +4,5 @@ package arena
 
 type RivalStat struct {
 	Balance    int `json:",omitempty"`
-	GamesCount int `json:",omitempty"`
+	PlaysCount int `json:",omitempty"`
 }

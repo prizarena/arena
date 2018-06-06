@@ -1,8 +1,7 @@
 # Go package "[strongo](https://github.com/strongo)/[arena](https://github.com/prizarena/arena/arena-go)"
-Games tournaments in Go lang with support for plays between strangers (_+sponsoring_).
+This package helps to keep track of games between 2 players.
 
-## Models
-- Tournament
-- Contestant
+## How it works
+You can extend you own `User` entity with UserContestantEntity
 
 # Methods

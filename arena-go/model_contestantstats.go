@@ -4,7 +4,6 @@ import "github.com/strongo/slices"
 
 // ContestantStats can be used in User entity for storing games statistics
 type ContestantStats struct {
-	GameUserID            string
 	CountOfPlaysCompleted int                                   `datastore:",noindex,omitempty"`
 	CountOfWins           int                                   `datastore:",noindex,omitempty"`
 	CountOfDraws          int                                   `datastore:",noindex,omitempty"`

@@ -41,9 +41,9 @@ func (j *RivalStat) MarshalJSONBuf(buf fflib.EncodingBuffer) error {
 		fflib.FormatBits2(buf, uint64(j.Balance), 10, j.Balance < 0)
 		buf.WriteByte(',')
 	}
-	if j.GamesCount != 0 {
+	if j.PlaysCount != 0 {
 		buf.WriteString(`"CountOfPlaysCompleted":`)
-		fflib.FormatBits2(buf, uint64(j.GamesCount), 10, j.GamesCount < 0)
+		fflib.FormatBits2(buf, uint64(j.PlaysCount), 10, j.PlaysCount < 0)
 		buf.WriteByte(',')
 	}
 	buf.Rewind(1)
@@ -244,7 +244,7 @@ handle_GamesCount:
 				return fs.WrapErr(err)
 			}
 
-			j.GamesCount = int(tval)
+			j.PlaysCount = int(tval)
 
 		}
 	}
