@@ -3,7 +3,7 @@
 // source: rivalstat.go
 // DO NOT EDIT!
 
-package arena
+package models4arena
 
 import (
 	"bytes"

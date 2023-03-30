@@ -1,4 +1,4 @@
-package arena
+package models4arena
 
 import "github.com/pquerna/ffjson/ffjson"
 

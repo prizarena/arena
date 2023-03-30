@@ -1,4 +1,4 @@
-package arena
+package models4arena
 
 //go:generate ffjson $GOFILE
 

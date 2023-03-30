@@ -1,4 +1,4 @@
-package arena
+package models4arena
 
 import (
 	"github.com/strongo/slices"
@@ -12,10 +12,10 @@ type UserEntity struct {
 	BiddingUserIDs slices.CommaSeparatedUniqueValuesList `datastore:",noindex,omitempty"`
 	ContestantStats
 	RivalStatsEntity
-	LastPlayIDs    slices.CommaSeparatedUniqueValuesList
+	LastPlayIDs slices.CommaSeparatedUniqueValuesList
 }
 
-func (u *UserEntity) UpdateArenaStats(tournamentID, rivalUserID, playID string, balanceDiff int) (updated bool){
+func (u *UserEntity) UpdateArenaStats(tournamentID, rivalUserID, playID string, balanceDiff int) (updated bool) {
 	if u.LastPlayIDs.Contains(playID) {
 		return
 	}

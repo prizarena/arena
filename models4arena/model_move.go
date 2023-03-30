@@ -1,4 +1,4 @@
-package arena
+package models4arena
 
 type Move struct {
 	*MoveEntity
