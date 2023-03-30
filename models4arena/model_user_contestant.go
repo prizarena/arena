@@ -1,7 +1,8 @@
 package models4arena
 
 import (
-	"github.com/strongo/slices"
+	"github.com/strongo/slice"
+	"strings"
 )
 
 // We need this file as players can play without participating in a tournament
@@ -9,14 +10,14 @@ import (
 
 // UserEntity extends application specific `User` entity with arena properties
 type UserEntity struct {
-	BiddingUserIDs slices.CommaSeparatedUniqueValuesList `datastore:",noindex,omitempty"`
+	BiddingUserIDs string `datastore:",noindex,omitempty"`
 	ContestantStats
 	RivalStatsEntity
-	LastPlayIDs slices.CommaSeparatedUniqueValuesList
+	LastPlayIDs string `datastore:",noindex,omitempty"`
 }
 
 func (u *UserEntity) UpdateArenaStats(tournamentID, rivalUserID, playID string, balanceDiff int) (updated bool) {
-	if u.LastPlayIDs.Contains(playID) {
+	if slice.Index(strings.Split(u.LastPlayIDs, ","), playID) >= 0 {
 		return
 	}
 	rivalKey := NewBattleID(tournamentID, rivalUserID)
@@ -26,8 +27,8 @@ func (u *UserEntity) UpdateArenaStats(tournamentID, rivalUserID, playID string, 
 	rival.Balance += balanceDiff
 	rivalStats[rivalKey] = rival
 	u.SetRivalStats(rivalStats)
-	u.BiddingUserIDs = u.BiddingUserIDs.Remove(rivalUserID)
-	u.LastPlayIDs.Add(playID, 100)
+	//u.BiddingUserIDs = u.BiddingUserIDs.Remove(rivalUserID)
+	//u.LastPlayIDs.Add(playID, 100)
 	updated = true
 	return
 }
