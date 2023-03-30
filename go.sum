@@ -1,0 +1,6 @@
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pquerna/ffjson v0.0.0-20190930134022-aa0246cd15f7 h1:xoIK0ctDddBMnc74udxJYBqlo9Ylnsp1waqjLsnef20=
+github.com/pquerna/ffjson v0.0.0-20190930134022-aa0246cd15f7/go.mod h1:YARuvh7BUWHNhzDq2OM5tzR2RiCcN2D7sapiKyCel/M=
+github.com/strongo/slices v0.0.0-20180713073818-553769fcb80b h1:g0ZObTZGq063TrS2Pp0hV/eYZyN6adk4lQbuThWzXrA=
+github.com/strongo/slices v0.0.0-20180713073818-553769fcb80b/go.mod h1:FTi/rUItuJV+7C/ABoBn8/hu/nXFsXVlQ27WU54iYAY=
